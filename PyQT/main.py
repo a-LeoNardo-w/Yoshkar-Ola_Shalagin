@@ -1,15 +1,15 @@
 import sys
 
-from PyQt5 import uic
+from UI import Ui_Form
 from PyQt5.QtWidgets import QApplication, QWidget
 from PyQt5.QtGui import QPainter, QColor
 from random import randint
 
 
-class MyWidget(QWidget):
+class MyWidget(QWidget, Ui_Form):
     def __init__(self):
         super().__init__()
-        uic.loadUi('UI.ui', self)
+        self.setupUi(Ui_Form)
         self.do_paint = False
         self.pushButton.clicked.connect(self.paint)
 
